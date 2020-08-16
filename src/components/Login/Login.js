@@ -5,6 +5,7 @@ import './Login.css';
 const Login = ({history}) => {
 
     const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
 
     const submit = async (e) => {
       e.preventDefault();
@@ -16,31 +17,31 @@ const Login = ({history}) => {
       console.log(res);
       let token = res.data.token;
       localStorage.setItem('token', token);
-    //   let users = await axios.get(`http://emphasoft-test-assignment.herokuapp.com/api/v1/users/`,
-    //   { headers: {
-    //     Authorization:`Token ${token}`,
-    //   } 
-    //   });
-    //   console.log(users);
       history.push('/');
       
     };
-
+    
+    const isActive = (password && login) ?  `active`: 'inactive';
+    const handleClick = (password && login) ? submit : (e) => e.preventDefault();
+    const notification = (password && login) ? null : <span className= "notification">  *Все поля необходимы для заполнения</span>;
 
     return (
         <div className="form-container">
         <form className="authorization-form">
             <label>
                 <span><b>Логин:</b></span>
-            <input type="text" name="name"  placeholder="Введите логин" 
-                onChange={ e => setLogin(e.target.value)} />
-
+            <input type="text" name="login"  placeholder="Введите логин"
+                value = {login}
+                onChange={ e => setLogin(e.target.value.match(/\w+/))} />
             </label>
             <label>
             <span><b>Пароль:</b></span>
-            <input type="text" name="name"  placeholder="Введите пароль"/>
+            <input type="text" name="password"  placeholder="Введите пароль"
+                value = {password}
+                onChange = {(e) => setPassword( e.target.value.match(/\w+/))}/>
             </label>
-            <input type="submit" value="Отправить" onClick={submit}/>
+            {notification}
+            <input className = {isActive} type="submit" value="Отправить" onClick={handleClick} />
         </form>
     </div>
     );

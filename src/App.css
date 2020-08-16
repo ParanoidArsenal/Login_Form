@@ -9,8 +9,39 @@
   padding-top: 80px;
 }
 
-/* .App *{
-  font-size: 1.05em;
-} */
+.page-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
+  color:rgb(10, 12, 15);
+  text-align: center;
+}
+
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 575px) {
+
+  .page-container{
+    padding: 0px 20px;
+  }
+
+}
 
 
