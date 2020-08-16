@@ -1,6 +1,5 @@
 *{
   font-family: Arial, Helvetica, sans-serif;
-  /* font-size: 1.05em; */
 }
 
 .App {
@@ -19,29 +18,28 @@
   text-align: center;
 }
 
-
-@media screen and (min-width: 1200px) {
-
-}
-
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-
-}
-
-@media screen and (min-width: 576px) and (max-width: 767px) {
-
-}
-
 @media screen and (max-width: 575px) {
-
   .page-container{
     padding: 0px 20px;
   }
+}
 
+.btn{
+  background-color: rgb(15, 91, 255);
+  color:white;
+  border: 1px solid rgba(121, 107, 107, 0);
+  transition: all 0.2s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.btn:hover{
+  background-color: rgba(15, 91, 255, 0.815);
+}
+
+.btn:active{
+  outline: none;
+  background-color: rgba(12, 60, 163, 0.815);
 }
 
 

@@ -6,16 +6,11 @@
 }
 
 .dropbtn {
-    background-color: rgb(15, 91, 255);
-    color: white;
     padding: 5px;
-    border: none;
-    cursor: pointer;
     width: 100%;
     max-width:200px;
     border-radius: 5px;
     font-size: 1em;
-    /* border: 1px solid rgba(121, 107, 107, 0); */
 }
 
 .dropdown-content {
@@ -74,8 +69,4 @@
     .dropdown-content{
         width: 24%;
     }
-}
-
-@media screen and (max-width: 575px) {
-
 }

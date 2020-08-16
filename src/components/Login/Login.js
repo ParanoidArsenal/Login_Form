@@ -39,7 +39,7 @@ const Login = ({history}) => {
             setFunc(``);
     };
     
-    const isActive = (password && login) ?  `active`: 'inactive';
+    const isActive = (password && login) ?  ``: 'inactive';
     const handleClick = (password && login) ? submit : (e) => e.preventDefault();
     const notification = (password && login) ? null : <span className= "notification">  *Все поля необходимы для заполнения</span>;
 
@@ -68,7 +68,7 @@ const Login = ({history}) => {
                     onChange = {(e) => handleChange( e.target.value, setPassword)}/>
                 </label>
                 {notification}
-                <input className = {isActive} type="submit" value="Отправить" onClick={handleClick} />
+                <input className = {`btn ${isActive}`} type="submit" value="Отправить" onClick={handleClick} />
             </form>
         </div>
     );

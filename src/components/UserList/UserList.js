@@ -5,12 +5,11 @@ import {Dropdown} from '../Dropdown/Dropdown';
 
 const UserList = ({history}) => {
     const [users, setUsers] = useState([]);
-    const [usersToPrint, setUsersToPrint] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const sortTypes = [
         'По умолчанию',
-        'По возрастсанию id',
+        'По возрастанию id',
         'По убыванию id',
     ];
 
@@ -33,7 +32,7 @@ const UserList = ({history}) => {
             case 'По умолчанию':
                 usersToSort.sort( (a,b) => a.defaul_index - b.defaul_index)
                 break;
-            case 'По возрастсанию id':
+            case 'По возрастанию id':
                 usersToSort.sort( (a,b) => a.id - b.id)
                 break;
             case 'По убыванию id':
@@ -44,14 +43,6 @@ const UserList = ({history}) => {
         };
         return usersToSort;
     };
-
-    const handleFilterUpdate = (filter) =>{
-        setFilterValue(filter);
-    }
-
-    const handleSortUpdate = (sort) =>{
-        setSort(sort);
-    }
 
     useEffect(() =>{
             setLoading(true);
@@ -70,14 +61,9 @@ const UserList = ({history}) => {
                     setUsers(res.data.map( (user,index) => {user['defaul_index'] = index; return user}));
                     setLoading(false);
                 });
-                // let users_fetched = await axios.get(`http://emphasoft-test-assignment.herokuapp.com/api/v1/users/`,
-                // { headers: {
-                //     Authorization:`Token ${token}`,
-                //     } 
-                // });
             };
 
-    }, []);
+    }, [history]);
     
     if(loading){
         return(
@@ -104,10 +90,10 @@ const UserList = ({history}) => {
                 <div className = 'bar-container'>
 
                         <span>Сортировать:</span>
-                        <Dropdown activeItem = {sortType} items = {sortTypes} setActive = {handleSortUpdate} />
+                        <Dropdown activeItem = {sortType} items = {sortTypes} setActive = {setSort} />
 
                         <span>Фильтрация по логину:</span>
-                        <input type = 'text' value = {filterValue} onChange = {(e) => handleFilterUpdate( e.target.value)}/>
+                        <input type = 'text' value = {filterValue} onChange = {(e) => setFilterValue( e.target.value)}/>
 
                 </div>
                 <div className = 'table-container'>
