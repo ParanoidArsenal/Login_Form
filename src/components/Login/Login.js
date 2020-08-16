@@ -13,8 +13,6 @@ const Login = ({history}) => {
       console.log(login);
       console.log(password);
       axios.post('http://emphasoft-test-assignment.herokuapp.com/api-token-auth/',
-    //   { username:  'test_super',
-    //     password: 'Nf<U4f<rDbtDxAPn', }
         { username:  `${login}`,
           password: `${password}`, }
       ).then(
