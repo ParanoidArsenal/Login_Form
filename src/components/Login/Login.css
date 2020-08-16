@@ -1,0 +1,61 @@
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin-top: 80px;
+  }
+  
+  .registration-form{
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    max-width:70%;
+    background-color: rgb(48, 199, 199);
+  }
+  
+  .registration-form label{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .authorization-form{
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    width:30%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .authorization-form input{
+    padding: 12px 20px;
+    /* width:100%; */
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .authorization-form input[type=submit]{
+    background-color: rgb(15, 91, 255);
+    color:white;
+    border: 1px solid rgba(121, 107, 107, 0);
+    transition: all 0.2s;
+  }
+  
+  .authorization-form input[type=submit]:hover{
+    background-color: rgba(15, 91, 255, 0.815);
+    transform: scale(1.03);
+  }
+  
+  .authorization-form label{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+  }
+  
+  .authorization-form label *{
+    margin: 5px 0px;
+  }
