@@ -1,12 +1,12 @@
 import React, { useEffect} from 'react';
 import './Main.css';
-
+import {homeURL} from '../../helper';
 
 const Main = ({history}) => {
     useEffect(() =>{
             const token = localStorage.getItem('token');
             if(!token){
-                history.push('/Login');
+                history.push(homeURL + '/Login');
             }
     }, [history]);
 
@@ -15,7 +15,7 @@ const Main = ({history}) => {
         <h1>
             Авторизация проведена успешно!
         </h1>
-        <button className='btn user-list-btn' onClick = {() => history.push('/user-list')}>
+        <button className='btn user-list-btn' onClick = {() => history.push(homeURL + '/User-list')}>
             Отобразить список пользователей
         </button>
 

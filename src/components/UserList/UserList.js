@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import './UserList.css';
 import axios from 'axios';
 import {Dropdown} from '../Dropdown/Dropdown';
+import {homeURL} from '../../helper';
 
 const UserList = ({history}) => {
     const [users, setUsers] = useState([]);
@@ -20,7 +21,6 @@ const UserList = ({history}) => {
 
     const filterUsers = (usersToFilter, filter) => {
         if(!filter){
-            console.log(`it's empty!`);
             return usersToFilter;
         }
 
@@ -47,13 +47,12 @@ const UserList = ({history}) => {
     useEffect(() =>{
             setLoading(true);
             const token = localStorage.getItem('token');
-            console.log(token);
             if(!token){
-                history.push('/Login');
+                history.push(homeURL + '/Login');
 
             }
             else{
-                axios.get(`http://emphasoft-test-assignment.herokuapp.com/api/v1/users/`,
+                axios.get(`https://emphasoft-test-assignment.herokuapp.com/api/v1/users/`,
                 { headers: {
                     Authorization:`Token ${token}`,
                     } 

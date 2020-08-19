@@ -32,7 +32,7 @@ table.users-table tbody tr:hover{
   margin:20px 0px;
   justify-content: center;
   align-items: flex-start;
-  min-width:50px;
+  min-width:80px;
 }
 
 .bar-container{
@@ -43,7 +43,7 @@ table.users-table tbody tr:hover{
   align-items: center;
   flex-wrap: wrap;
   padding: 5px 10px;
-  min-width:50px;
+  min-width:80px;
   overflow: hidden;
 }
 
@@ -103,10 +103,6 @@ table.users-table tbody tr:hover{
 @media screen and (max-width: 575px) {
   .bar-container, .table-container{
     width:80%;
-  }
-
-  .bar-container{
-    background-color: khaki;
   }
 
   .bar-container *{

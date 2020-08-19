@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css';
+import {homeURL} from '../../helper';
 
 const Login = ({history}) => {
 
@@ -10,16 +11,14 @@ const Login = ({history}) => {
 
     const submit = (e) => {
       e.preventDefault();
-      console.log(login);
-      console.log(password);
-      axios.post('http://emphasoft-test-assignment.herokuapp.com/api-token-auth/',
+      axios.post('https://emphasoft-test-assignment.herokuapp.com/api-token-auth/',
         { username:  `${login}`,
           password: `${password}`, }
       ).then(
           res => {
             let token = res.data.token;
             localStorage.setItem('token', token);
-            history.push('/');
+            history.push(homeURL + '/');
           },
           err => {
             setloginIsFailled(true);
