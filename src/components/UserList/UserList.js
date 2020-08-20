@@ -49,7 +49,6 @@ const UserList = ({history}) => {
             const token = localStorage.getItem('token');
             if(!token){
                 history.push(homeURL + '/Login');
-
             }
             else{
                 axios.get(`https://emphasoft-test-assignment.herokuapp.com/api/v1/users/`,

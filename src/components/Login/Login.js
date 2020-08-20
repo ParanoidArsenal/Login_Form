@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Login.css';
 import {homeURL} from '../../helper';
 
 const Login = ({history}) => {
-
+    useEffect(() =>{
+        const token = localStorage.getItem('token');
+        console.log(`refresh`);
+        if(token){
+            history.push(homeURL + '/');
+        }
+    }, [history]);
+    
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [loginIsFailled, setloginIsFailled] = useState(false);
@@ -25,8 +32,9 @@ const Login = ({history}) => {
             setTimeout(() => setloginIsFailled(false), 1000);
           }
       );
-      
     };
+
+    
 
     const handleChange = (value, setFunc) => {
         const matched_value = value.match(/\S+/);
